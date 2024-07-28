@@ -64,7 +64,7 @@ export const Layout = () => {
                   </g>{" "}
                 </g>
               </svg>{" "}
-              Estimated reading time: minute(s)
+              Estimated reading time:
             </p>
             <div className="m-auto size-fit text-left text-2xl">
               <a className="space-y-4">{content}</a>
