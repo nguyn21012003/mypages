@@ -1,5 +1,3 @@
-import { estimateReadingTime } from "M:/codespace/NewVite/src/utils/readingTime.tsx";
-
 export const Layout = () => {
   const content = `
     Use this area to speak to your mission. I’m a research scientist
@@ -11,14 +9,12 @@ export const Layout = () => {
     Please reach out to collaborate. Im taking into account Solid
     Matter Theory`;
 
-  const readingTime = estimateReadingTime(content);
-
   return (
     <div className="my-backround">
       <div className="bg-[#F8FAFC] py-4 text-center dark:bg-[#1F2937]">
         <div>
           <div className="mx-10 items-center justify-center space-y-20">
-            <h1 className="font-Poppins text-center text-4xl font-bold">
+            <h1 className="text-center font-Poppins text-4xl font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -68,7 +64,7 @@ export const Layout = () => {
                   </g>{" "}
                 </g>
               </svg>{" "}
-              Estimated reading time: {readingTime} minute(s)
+              Estimated reading time: minute(s)
             </p>
             <div className="m-auto size-fit text-left text-2xl">
               <a className="space-y-4">{content}</a>
