@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "./../lib/logo.svg";
 
 import { HiAcademicCap } from "react-icons/hi";
 import Trimmed from "../component/trimmed";
@@ -16,7 +15,7 @@ export const About: React.FC = () => {
               <img
                 alt="Khoi Nguyen Tran"
                 className="size-20 self-start rounded-full border-[4px]"
-                src={Logo}
+                src="/logo.svg"
               ></img>
               <p>
                 <a className="font-Poppins text-lg font-semibold">
