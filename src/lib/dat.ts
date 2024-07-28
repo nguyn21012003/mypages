@@ -1,0 +1,26 @@
+export const skillDat = [
+  "HTML",
+  "TypeScript",
+  "Latex",
+  "Python",
+  "React",
+  "Example",
+  "Example",
+  "Example",
+  "Example",
+  "Example",
+  "Example",
+] as const;
+export const Showcase = [
+  "HTML",
+  "TypeScript",
+  "Latex",
+  "Python",
+  "React",
+  "Example",
+  "Example",
+  "Example",
+  "Example",
+  "Example",
+  "Example",
+] as const;

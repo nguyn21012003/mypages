@@ -1,0 +1,609 @@
+\documentclass{report}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+\usepackage{fontsize}
+\changefontsize[13pt]{13pt}
+\usepackage{commath}
+\usepackage{blindtext}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{slashed}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+%\usepackage{tikz-feynman}
+\usepackage{nccmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath,systeme,bbold}
+\usepackage[thinc]{esdiff}
+\usepackage{hyperref}
+\usepackage{dirtytalk,bm,physics}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+%footnote
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}%
+\fancyhf{}%
+\fancyfoot[LE,LO]{Vật lý Lý thuyết}%
+\fancyfoot[C]{\hspace{4cm} \thepage}%
+
+\usetikzlibrary{shapes.geometric, arrows}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+\renewcommand{\baselinestretch}{2.0}
+\usetikzlibrary{arrows.spaced}
+\usetikzlibrary{animations,quotes}
+%gian do
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered,draw=black, fill=white!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{\Huge{LÝ THUYẾT HỆ NHIỀU HẠT}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={LTHNH},
+	pdfpagemode=FullScreen,
+}
+
+\urlstyle{same}
+
+\begin{document}
+\tableofcontents
+\setlength{\parindent}{20pt}
+\newpage
+\author{TRẦN KHÔI NGUYÊN \\ VẬT LÝ LÝ THUYẾT}
+\maketitle
+\chapter{Hàm Green trong vật lý}
+\section{Các bức tranh biểu diễn}
+Để mô tả sự phụ thuộc thời gian của các hệ vật lý, trong cơ lượng tử nói chung và vật lý chất rắn nói riêng người ta thường dùng một trong ba biểu diển, cũng thường gọi là bức tranh :
+\begin{enumerate}
+	\item [$\bullet$] Bức tranh Schr\"{o}dinger (bức tranh trạng thái)
+	\item [$\bullet$] Bức tranh Heisenberg (bức tranh toán tử)
+	\item [$\bullet$] Bức tranh Dirac (bức tranh tương tác)
+\end{enumerate}
+\subsection{Bức tranh Schr\"{o}dinger}
+Toán tử độc lập với thời gian: $H$.\\
+Hàm sóng hay vector trạng thái phụ thuộc vào thười gian: $\mathit{\ket{\Psi_{s}(t)}}$.\\
+Từ CLT ta có phương trình chuyển động:
+\begin{itemize}
+	\item Đối với những trạng thái ``thuần khiết'' $\ket{\Psi_{s}(t)}$ trong hệ CLT:
+	      \begin{align}\label{eq1.1}
+		      i \hbar \dfrac{\partial}{\partial{t}}\ket{\Psi_{s}(t)} = H \ket{\Psi_{s}(t)}
+	      \end{align}
+	\item Đối với những trạng thái ``pha trộn'' $\mathit{\rho_{s}(t)}$ (dùng cho hệ vĩ mô được mô tả một cách thống kê):
+	      \begin{align}
+		      i \hbar \dfrac{\partial}{\partial{t}}\rho_{s}(t) = \left[ \rho_{s}(t),H \right]_{-} ,
+	      \end{align}
+\end{itemize}
+trong đó $\rho_{s}(t)$ thường được gọi là ma trận mật độ và có những tính chất:
+\begin{itemize}
+	\item	$\begin{aligned}[t]
+			      \rho_{s} = \sum_{m}^{}P_{m} \ket{\Psi_{m}} \bra{\Psi_{m}}
+		      \end{aligned}$	với $P_{m}$ là xác suất để hệ ở trong trạng thái $\ket{\Psi_{m}}$
+	\item  	Giá trị kỳ vọng của đại lượng khảo sát $\langle A \rangle$ tương ứng với toán tử $A$ được xác định
+	      \begin{align*}
+		      \langle A \rangle = Tr(\rho_{s}A)
+	      \end{align*}
+	\item $Tr(\rho_s) = 1$
+\end{itemize}
+Phương trình \hyperref[eq1.1]{(1.1)} cho nghiệm là:
+\begin{align}
+	\ket{\Psi_{s}(t)} = e^{\frac{i}{\hbar}H(t-t')} \ket{\Psi_{s}(t_{0})}
+\end{align}
+với $t_0$ là thời điểm cố định nào đó và người ta thường chọn $t_0$ = 0.
+\subsection{Bức tranh Heisenberg(bức tranh toán tử)}
+Mô tả bài toán CLT bằng cách xét:
+\begin{itemize}
+	\item \textit{Hàm sóng(vector trạng thái) không đổi theo thời gian} $\ket{\Psi_{H}}$.
+	\item \textit{Toán tử phụ thuộc thời gian}: $O(t)$.
+\end{itemize}
+Sự phụ thuộc vào thời gian của toán tử được xác định như sau:
+\begin{align}\label{eq1.4}
+	A_{H}(t) = e^{\frac{i}{\hbar}H(t-t_0)} A_{H}(t_0) e^{-\frac{i}{\hbar}H(t-t_0)}
+\end{align}
+Ta có thể viết lại \hyperref[eq1.4]{(1.4)} dưới dạng phương trình chuyển động:
+\begin{align}
+	i \hbar \dfrac{\partial}{\partial{t}} A(t) = \left[ A(t),H \right]_{-}.
+\end{align}
+Sự tương đương giữa bức tranh S và H: ta xét phần tử ma trận mô tả sự chuyển dời giữa hai trạng thái 1 và 2:
+\begin{itemize}
+	\item trong bức tranh S phần tử ma trận của toán tử $A$ là
+	      \begin{align}\label{eq1.5}
+		      \langle \Psi_{1}^{\dagger}(t) A(0) \Psi_{2}(t) \rangle = \langle \Psi_{1}^{\dagger}(0) e^{\frac{i}{\hbar}Ht} A(0) e^{-\frac{i}{\hbar}Ht} \Psi_{2}(0) \rangle.
+	      \end{align}
+	\item trong bức tranh H là
+	      \begin{align}
+		      \langle \Psi_{1}^{\dagger}(0) A(t) \Psi_{2}(0) \rangle = \langle \Psi_{1}^{\dagger}(0) e^{\frac{i}{\hbar}Ht} A(0) e^{-\frac{i}{\hbar}Ht} \Psi_{2}(0) \rangle.
+	      \end{align}
+\end{itemize}
+Như vật hai bức tranh cho cùng phần tử ma trận $\Rightarrow$ chúng tương đương nhau.
+\subsection{Bức tranh Dirac(bức tranh tương tác)}
+Biểu diễn tương tác được xem như loại trung gian của hai biểu diễn trên.\\
+Trong biểu diễn này \textit{toán tử và vector trạng thái đều phụ thuộc thời gian}.\\
+Xét toán tử Hamilton $\mathcal{H}$. Ta chia toán tử thành hai phần:
+\begin{align}\label{eq1.7}
+	\mathcal{H} = H_0 + W(t),
+\end{align}
+trong đó toán tử $H_0$ là phần không nhiễu loạn và thường được chọn sao cho \textbf{có thể giải được}, $W(t)$ là thế tương tác.\\
+Sự phụ thuộc thời gian của hàm sóng và toán tử được xác định :
+\begin{align}
+	\label{eq1.9}
+	A_I(t)            & = e^{\frac{i}{\hbar}H_0t} A(0) e^{-\frac{i}{\hbar}H_0t},            \\
+	\label{eq1.10}
+	\ket{\Psi_{I}(t)} & =  e^{\frac{i}{\hbar}H_0t} e^{-\frac{i}{\hbar}Ht}\ket{\Psi_{I}(0)}.
+\end{align}
+Đối với vector trạng thái, ta viết lại \hyperref[eq1.10]{(1.10)} dưới dạng phương trình chuyển động:
+\begin{align}
+	\dfrac{\partial }{\partial t} \ket{\Psi_{I}(t)} & = e^{\frac{i}{\hbar}H_0t}(H_0 - H) e^{-\frac{i}{\hbar}Ht}\ket{\Psi_{I}(0)}\nonumber                                                                                              \\
+	                                                & = -i  \underbrace{e^{\frac{i}{\hbar}H_0t} V e^{\frac{-i}{\hbar}H_0t} }_{V(t)} \underbrace{ e^{\frac{i}{\hbar}H_0t} e^{-\frac{i}{\hbar}Ht}\ket{\Psi_{I}(0)} }_{\ket{\Psi_{I}(t)}}
+\end{align}
+Như vậy
+\begin{align}\label{eq1.12}
+	i \hbar \dfrac{\partial}{\partial{t}} \ket{\Psi_{I}(t)} = V(t) \ket{\Psi_{I}(t)}.
+\end{align}
+Phương trình chuyển động \hyperref[eq1.12]{(1.12)} cho thấy thế tương tác phụ thuộc thời gian $W(t)$ quy định sự thay đổi theo thời gian của vector trạng thái, trong khi sự phụ thuộc thời gian cuẩ toán tử được quyết định bởi phần Hamilton không nhiễu loạn $H_0$.\\
+Chú ý rằng với tính phụ thuộc thời gian \hyperref[eq1.9]{(1.9)} và \hyperref[eq1.10]{(1.10)}, nếu xét phần tử ma trận chuyển dời giữa hai trạng thái $\langle \Psi_{1}^{\dagger}(t) A(t) \Psi_{2}(t) \rangle$, sẽ tìm thấy sự tương đương giữa biểu diễn tương tác và hai biểu diễn còn lại.\\
+\textbf{Toán tử tiến hóa}: \hyperref[eq1.10]{(1.10)} đặt
+\begin{align}\label{eq1.13}
+	U(t) = e^{\frac{i}{\hbar}H_0t} e^{-\frac{i}{\hbar}Ht}.
+\end{align}
+ta có:
+\begin{align*}
+	\ket{\Psi_{I}(t)} = U(t)\ket{\Psi(0)}.
+\end{align*}
+Như vậy $U(t)$ là một toán tử tiến hóa thời gian: dưới tác động của nó, vector trạng thái tại 0 tiến sang trạng thái tại $t$. Tính chất:
+\begin{align}
+	U(0)                                      & = 1         \\
+	\label{eq1.15}
+	i\hbar \dfrac{\partial}{\partial{t}} U(t) & = W(t)U(t).
+\end{align}
+Nghiệm của \hyperref[eq1.15]{(1.15)} là :
+\begin{align*}
+	U(t) - U(0) = -\dfrac{i}{\hbar} \int_{0}^{t}dt_1 W(t_1)U(t_1).
+\end{align*}
+Hoặc
+\begin{align}\label{eq1.16}
+	U(t) = 1 -\dfrac{i}{\hbar} \int_{0}^{t}dt_1 W(t_1)U(t_1).
+\end{align}
+Bằng phép tính lặp cho \hyperref[eq1.15]{(1.15)}, ta có thể biểu diễn $U(t)$ thành chuỗi vô hạn:
+\begin{align}
+	U(t) & = 1- i \int_{0}^{t}dt_1 W(t_1) + \left( - \dfrac{i}{\hbar} \right)^2 \int_{0}^{t}dt_{1}\int_{0}^{t_1}dt_2W(t_1)W(t_2) + ... \\
+	\label{eq1.17}
+	     & = 1 + \sum_{n=1}^{\infty}U^(n)(t)
+\end{align}
+trong đó
+\begin{align}
+	U^{(n)}(t) =\sum_{n=1}^{\infty} \left( -\dfrac{i}{\hbar} \right)^{n} \int_{0}^{t}dt_{1}\int_{0}^{t_1}dt_2...\int_{0}^{t_{n-1}}dt_n W(t_1)W(t_2)...W(t_n)
+\end{align}
+(t $\geq$ $t_1$ $\geq$ $t_2$...$\geq$ $t_n$ $\geq$ $t_0$).\\
+Với T-tích(toán tử thời trình) $T$ được định nghĩa
+\begin{align}
+	T\left[ W(t_1) W(t_2) \right] =
+	\begin{cases}
+		W(t_1)W(t_2), \text{với}\; t_1 > t_2 \\
+		W(t_2)W(t_1), \text{với}\; t_1 > t_2.
+	\end{cases}
+\end{align}
+hoặc
+\begin{align}
+	T\left[ W(t_1) W(t_2) \right] = \theta(t_1 - t_2)W(t_1)W(t_2) + ]\theta(t_2 - t_1)W(t_2)W(t_1)
+\end{align}
+($\theta$ là hàm bước nhảy), ta có thể viết lại chuỗi của toán tử tiến hóa thành:
+\begin{align}
+	U(t) = 1 + \sum_{n=1}^{\infty}\dfrac{1}{n!}\left(-\dfrac{i}{\hbar}\right)^{n}
+	\int_{0}^{t}dt_1...\int_{0}^{t}dt_n T\left[W(t_1)..W(t_n)\right]
+\end{align}
+Chuỗi trên là khai triể của hàm e lũy thừa và như vậy ta có dạng viết gọn của toán tử tiến hóa và chọn cho $\hbar$ = 1 :
+\begin{align}
+	U(t) = Te^{\left[ -i \int_{0}^{t}dt_1 W(t_1) \right]}
+\end{align}
+\section{S-ma trận}
+S-ma trận được định nghĩa như là toán tử thay đổi vector trạng thái $\ket{\Psi_{I}(t')}$ thành trạng thái $\ket{\Psi_{I}(t)}$:
+\begin{align}\label{eq1.24}
+	\ket{\Psi_{I}(t)}  = S(t,t') \ket{\Psi_{I}(t')}
+\end{align}
+S-ma trận có tính chất
+\begin{enumerate}
+	\label{tc1}
+	\item $S(t,t') = U(t)U^{\dagger}(t')$\\
+	      Sử dụng định nghĩa toán tử tiến hóa
+	      \begin{align*}
+		      \ket{\Psi_{I}(t)} = U(t) \ket{\Psi_{I}(0)}
+	      \end{align*}
+	      cho $\ket{\Psi_{I}(t')}$ $\Rightarrow$ $\ket{\Psi_{I}(t')} = U(t') \ket{\Psi_{I}(0)} $  ta có:
+	      \begin{align*}
+		      \ket{\Psi_{I}(t)}  = S(t,t')U(t') \ket{\Psi_{I}(t0)}.
+	      \end{align*}
+	      Từ đây ta được mối liên hệ giữa S và U
+	      \label{tc2}
+	\item $S(t,t) = 1$
+	\item $S^{+}(t,t') = S(t',t)$
+	      \label{tc4}
+	\item $S(t,t') = S(t,t'')S(t'',t')$
+	\item $S$ thỏa phương trình :
+	      \begin{align}
+		      \dfrac{\partial}{\partial t} S(t,t')
+		       & = \dfrac{\partial}{\partial t}U(t)U^{\dagger}(t')\nonumber \\
+		       & = -iW(t)U(t)U^{\dagger}(t')\nonumber                       \\
+		       & = -iW(t)S(t,t')
+	      \end{align}
+	\item Và như vậy toán tử tiến hóa ta có thể biểu diễn thành:
+	      \begin{align}
+		      S(t,t') = T e^{-i \int_{t'}^{t} dt_1 W(t_1)}
+	      \end{align}
+\end{enumerate}
+\textbf{Hệ thức Gell-Mann \& Low}\\
+\indent Trong phương trình xác định sự biến đổi theo thời gian của hàm sóng $\ket{\Psi_{I}(t)}$ \hyperref[eq1.10]{(1.10)} cũng như trong các dẫn xuất ra toán tử tiến hóa và S-ma trận chúng ta đã đưa ra hàm sóng tại $t=0$. Chú ý rằng đây cũng chính là hàm sóng không phụ thuộc thời gian $\ket{\Psi_{H}}$ trong bức tranh H và là hàm sóng tại $t=0$ $\ket{\Psi_{S}(0)}$ trong bức tranh S; và vì vậy ta gọi chung là $\ket{\Psi(0)}$. Ta cần phải tìm ra mối liên hệ nào đó giúp ta xác định $\ket{\Psi(0)}$ vì nó như là điều kiện ban đầu để từ đó có thể xác định trạng thái tại những thời điểm khác.\\
+\indent Trong bức tranh tương tác, toán tử Hamilton được tách ra thành hai phần $W$ và $H_0$. Trong đó phần không nhiễu loạn $H_0$ được chọn sao cho có thể giải được(chính xác hàm riêng và trị riêng). Giả sử trạng thái cơ bản(đã biết) của $H_{0}$ là $\ket{\phi_{0}}$. Khi đó mối liên hệ giữa $\ket{\phi_{0}}$ và trạng thái chưa biết $\ket{\Psi(0)}$ đã được Gell-Mann \& Low chỉ ra:
+\begin{align}\label{eq1.27}
+	\ket{\Psi(0)} = S\left(0,-\infty \right) \ket{\phi_{0}}
+\end{align}
+Ta dẫn $\ket{\Psi(0)}$ từ định nghĩa S-matrận: tác động của S(0,t) lên phương trình $\ket{\Psi(t)} = S(t,0)\ket{\Psi(0)}$ và sử dụng tính chất \hyperref[tc2]{(2)} và \hyperref[tc4]{(4)} của S ma trận ta được:
+\begin{align}
+	\ket{\Psi(0)} = S\left(0,t \right) \ket{\Psi(t)}\nonumber
+\end{align}
+Lấy giới hạn $t\rightarrow\infty$ nên ta được:
+\begin{align}\label{eq1.28}
+	\ket{\Psi(0)} = S\left(0,-\infty \right) \ket{\Psi(-\infty)}
+\end{align}
+Ta được $\ket{\Psi(-\infty)} = \ket{\phi_{0}}$. Diễn ta hệ thức Gell-Mann \& Low dựa trên gần đúng đoạn nhiệt.
+\begin{itemize}
+	\item Ở quá khứ rất xa, lúc không có tương tác hệ ở trạng thái $\ket{\Psi(-\infty)} = \ket{\phi_{0}}$.
+	\item Khi thời gian tăng dần từ $-\infty$, thế tương tác $W$ được bật mở và được đưa dần vào hệ cho đến khi $t=0$ thì t ương tác được đưa vào hoàn toàn với hàm sóng tương ứng là $\ket{\Psi(0)}$. Nói cách khác \textit{toán tử $S(0,-\infty)$ đã chuyển một cách đoạn nhiệt hàm sóng $\mathit{\ket{\Psi(-\infty)} = \ket{\phi_{0}}}$ đến thời điểm $\mathit{t=0}$ tại đó thế tương tác W hiện diện hoàn toàn, và như vậy hàm sóng tương ứng $\mathit{\ket{\Psi(0)}}$ tại $\mathit{t=0}$ chính là hàm riêng của Hamilton toàn phần $\mathit{H}$}
+	\item Ta xét thêm trường hợp hệ tiến về tương lai xa, $t\rightarrow+\infty$: thế tương tác được tắt đi một cách đoạn nhiệt và tại $+\infty$ không còn tương tác, hệ trở về trạng thái cơ bản $\ket{\Psi(\infty)}$,(giả sử rằng) có liên hệ với ttcb $\ket{\phi_0}$ bằng một thừa số pha $\ket{\Psi(\infty)} = e^{i\alpha}\ket{\phi_0}$.\\
+	      Như vậy ta có:
+	      \begin{align}
+		      e^{i\alpha}\ket{\phi_0}
+		       & = \ket{\Psi(\infty)}\nonumber                                                \\
+		       & = S(\infty,0)\ket{\Psi(0)}\nonumber                                          \\
+		       & = S(\infty,-\infty)\ket{\Psi(-\infty)}\nonumber                              \\
+		       & = S(\infty,-\infty)\ket{\phi_0} \; \text{do} \; \ket{\Psi(-\infty)}\nonumber \\
+		      \label{eq1.29}
+		       & \Rightarrow e^{i\alpha} = \bra{\phi_{0}} S(\infty,-\infty) \ket{\phi_0}
+	      \end{align}
+\end{itemize}
+Giải thích cho \hyperref[eq1.28]{(1.28)}:\\
+Ta bắt đầu từ định nghĩa của S-ma trận(\hyperref[eq1.24]{1.24}) thì được :
+\begin{align}
+	\ket{\Psi(t)}            & = S(t,t')\ket{\Psi(t')}\nonumber \\
+	\Rightarrow\ket{\Psi(t)} & = S(t,0)\ket{\Psi(0)}\nonumber
+\end{align}
+Tác dụng $S(0,t)$ lên hai vế, và sử dụng tính chất \hyperref[tc2]{(2)} và \hyperref[tc4]{(4)}
+\begin{align}
+	S(0,t) \ket{\Psi(t)}
+	 & = S(0,t)S(t,0)\ket{\Psi(0)}\nonumber \\
+	 & = \ket{\Psi(0)}\nonumber
+\end{align}
+\section{Hàm Green}
+\subsection{Định nghĩa Hàm Green fermion}
+Chúng ta bắt đầu với định nghĩa HG cho electron:
+\begin{align}\label{eq1.30}
+	G_{\nu}(t,t') = -\dfrac{i}{\hbar} \bra{} Ta_{\nu}(t)a^{\dagger}_{\nu}(t') \ket{}
+\end{align}
+\begin{itemize}
+	\item Ở đây $\nu$ là số lượng tử thường bao gồm vector sóng $\vec{k}$ và spin $\sigma: \nu = \left( \vec{k},\sigma \right)$.
+	\item $\ket{}$ là trạng thái của hệ tại nhiệt độ 0, trạng thái này phải là trạng thái cơ bản được viết trong biểu diễn Heisenberg nên $\ket{}$ không phụ thuộc thời gian; nếu Hamilton của hệ là $H$ thì $\ket{}$ là trạng thái riêng của $H$.
+	\item Các toán tử phụ thuộc thời gian $ a_{\nu}(t)a^{+}_{\nu}(t') $ là ở trỏng biểu diễn \underline{biểu diễn Heisenberg} và tiến hóa theo quy luật:
+	      \begin{align}
+		      a_{\nu}(t) = e^{\frac{iHt}{\hbar}} a_{\nu} e^{\frac{-iHt}{\hbar}}\nonumber \\
+		      a^{+}_{\nu}(t) = e^{\frac{iHt}{\hbar}} a^{+}_{\nu} e^{\frac{-iHt}{\hbar}}\nonumber
+	      \end{align}
+	      cho $\hbar = 1$
+	      \begin{align}
+		      \label{eq1.31}
+		      a_{\nu}(t)     & = e^{iHt} a_{\nu} e^{-iHt}           \\
+		      \label{eq1.32}
+		      a^{+}_{\nu}(t) & = e^{iHt} a^{\dagger}_{\nu} e^{-iHt}
+	      \end{align}
+	      với $a_{\nu} \equiv$ $a_{\nu}(t=0), a^{\dagger}_{\nu}$ $\equiv$ $a^{+}_{\nu}(t=0)$ mô tả trạng thái của $H_0$.
+	\item T là toán tử thời trình: đặt toán tử có biến thời gian sớm hơn về bên phải. Đối với toán tử fermion cần thêm dấu ``-'' cho mỗi lần hoán vị.
+\end{itemize}
+Như vậy ta viết lại định nghĩa HG thành:
+\begin{align}
+	\label{eq1.33}
+	G_{\nu}(t,t') = -i \bra{}a_{\nu}(t)a^{\dagger}_{\nu}(t')\ket{} \; \text{nếu $t>t'$} \\
+	\label{eq1.34}
+	G_{\nu}(t,t') = +i \bra{}a^{\dagger}_{\nu}(t')a_{\nu}(t)\ket{} \; \text{nếu $t'>t$}
+\end{align}
+hoặc
+\begin{align}\label{eq1.35}
+	G_{\nu}(t,t') = -i \theta(t-t')\bra{}a_{\nu}(t)a^{\dagger}_{\nu}(t')\ket{} + i\theta(t'-t)\bra{}a^{\dagger}_{\nu}(t')a_{\nu}(t)\ket{},
+\end{align}
+với hàm $\theta$ là hàm bước nhảy.\\
+\textbf{Ý nghĩa của HG}: từ định nghĩa \hyperref[eq1.33]{(1.33)} ta thấy HG mô tả quá trình đo một hạt được tạo ra tại $t'$ rồi truyền đến $t$ và bị hủy. Trong trường hợp $t'>t$, HG mô tả quả trình hủy một hạt(tức là tạo 1 lỗ trống) tại $t$ sau đó hạt lại được tạo ra (lỗ trống bị hủy) tại $t'$. Như vậy HG mô tả qá trình truyền hạt (lỗ trống) và vì thế gọi HG là hàm truyền.\\
+Sử dụng \hyperref[eq1.31]{(1.31)} và \hyperref[eq1.32]{(1.32)} ta có:
+\begin{align}
+	G_{\nu}(t,t')
+	 & = -i \bra{} e^{iHt}a_{\nu}e^{-iHt}e^{iHt'}a^{\dagger}_{\nu}e^{-iHt'}\ket{}\nonumber \\
+	 & = -i e^{iE(t-t')}\bra{}a_{\nu}e^{iH(t-t')}a^{\dagger}_{\nu} \ket{}\label{eq1.36}
+\end{align}
+trong đó đã giả sử $E$ trị riêng ứng với trạng thái cơ bản của hệ với Hamilton $H$: $H\ket{} = E\ket{}$. Biểu thức $\hyperref[eq1.36]{(1.36)}$ cho thấy HG phụ thuộc vào $t-t'$. Tương tự ta cũng có tính chất này.\\
+Người ta cũng thường sử dụng định nghĩa HG nhiệt độ 0 như sau:
+\begin{align}\label{eq1.37}
+	G_{\mu\nu}(x,t;x',t') = -i \dfrac{\bra{\Psi_0}T\psi_{\mu}(x,t)\psi_{\nu}^{\dagger}(x',t')\ket{\Psi_0}}{\bra{\Psi_0}\ket{\Psi_0}}
+\end{align}
+trong đó $\mu,\nu$ là số lượng tử spin; trong trường hợp hệ không định hướng từ và
+không ở trong từ trường thì $\mu=\nu$. $\ket{\Psi_0}$ là trạng thái cơ bản của hệ bao gồm tương tác. Ta xét hệ đồng nhất, khi đó HG phụ thuộc chỉ vào hiệu các biến $x-x',t-t'$. $\psi,\psi^{\dagger}$ là những toán tử trường trong biểu diễn H.
+\begin{align}
+	\label{eq1.38}
+	\psi_{\mu}(x,t)
+	 & = \sum_{\vec{k}}\varphi_{\vec{k},\mu}(x)a_{\vec{k}\mu}(t)                  \\
+	\label{eq1.39}
+	\psi^{\dagger}_{\mu}(x,t)
+	 & = \sum_{\vec{k}}\varphi^{\ast}_{\vec{k},\mu}(x)a^{\dagger}_{\vec{k}\mu}(t)
+\end{align}
+với $\varphi$ là hàm sóng một hạt, trong gần đúng đơn giản nhất là sóng phẳng:
+\begin{align}
+	\varphi_{\vec{k}\mu}(x) = \dfrac{e^{i\vec{k}\cdot\vec{x}}}{\sqrt{V}}\sigma_{\mu}
+\end{align}
+$\sigma_{\mu}$ là chỉ số spin. Khai triển \hyperref[eq1.38]{(1.38)} và \hyperref[eq1.39]{(1.39)} là phép biến đổi Fourier chuyển từ không gian $\vec{x}$ sang không gian $\vec{k}$. Giả sử trạng thái cơ bản chuẩn hóa, tức là $\bra{\Psi_0}\ket{\Psi_0} = 1$, khi đó HG trong không gian Fourier $\vec{k}$.
+\begin{align}
+	G_{\vec{k}\mu}(t-t') = \displaystyle\int{}{} d\vec{x}e^{-i\vec{k}\cdot\left( \vec{x} - \vec{x'} \right)} G_{\mu} \left( \vec{x} - \vec{x'},t-t' \right)
+\end{align}
+tương đương với HG trong \hyperref[eq1.30]{(1.30)}. Phép biến đổi ngược là:
+\begin{align}
+	G_{\mu}(\vec{x}-\vec{x'},t-t')
+	 & = \dfrac{1}{V}\sum_{\vec{k}}^{}e^{i\vec{k}\cdot\left(\vec{x} - \vec{x'}\right)}G_{\vec{k}\mu}(t-t')\nonumber                       \\
+	 & =\dfrac{1}{\left(2\pi^3\right)}\int_{}^{}d\vec{k}e^{i\vec{k}\cdot\left(\vec{x} - \vec{x'}\right)}G_{\vec{k}\mu}\left( t-t' \right)
+\end{align}
+Người ta cũng thường dùng HG phụ thuộc tần số qua phép biến đổi Fourier theo thời gian
+\begin{align}
+	G_{\vec{k}\mu}(\omega) = \int_{-\infty}^{\infty}d\omega e^{-i\omega\left( t-t' \right)}G_{\vec{k}\mu}(\omega)
+\end{align}
+Với toán tử thời trình $T$ ta có thể viết lại \hyperref[eq1.37]{(1.37)} thành
+\begin{align}\label{eq1.44}
+	G_{\mu\nu}\left( x,t;x',t' \right) & = -i \theta\left( t-t' \right)\dfrac{ \bra{\Psi_0}\psi_{\mu}(x,t)\psi^{\dagger}_{\nu}\left( x',t' \right) \ket{\Psi_0}} {\bra{\Psi_0}\ket{\Psi_0}}\nonumber \\
+	                                   & + i\theta\left(t'-t\right)\dfrac{ \bra{\Psi_0}\psi^{\dagger}_{\nu}\left( x',t' \right)\psi_{\mu}(x,t) \ket{\Psi_0}} {\bra{\Psi_0}\ket{\Psi_0}}
+\end{align}
+\newpage
+\textbf{HG trong biểu diễn tương tác:} HG trong biểu diễn H không thích hợp cho lý thuyết nhiễu loạn. Ta sẽ chuyển HG sang biểu diễn tương tác. Áp dụng phép biến đổi theo thời gian \hyperref[eq1.9]{(1.9)} cho các toán tử $a_{\nu}$ và$ a^{+}_{\nu}$ trong \hyperref[eq1.31]{(1.31)}\hyperref[eq1.32]{(1.32)}, ta được
+\begin{align}
+	a_{\nu}(t) = e^{iHt} e^{-iH_0t} \hat{a}_{\nu}(t) e^{iH_0t} e^{-iHt} \\
+	a^{\dagger}_{\nu}(t) = e^{iHt} e^{-iH_0t} \hat{a}^{\dagger}_{\nu}(t) e^{iH_0t} e^{-iHt}
+\end{align}
+Với $\hat{a}$ là toán tử trong biểu diễn tương tác. Sử dụng định nghĩa toán tử tiến hóa $U(t) = e^{iH_0t}e^{-iHt}$ và tính chất \hyperref[tc1]{(1)} của S-matrận cho kết qả:
+\begin{align}
+	\label{eq1.47}
+	a_{\nu}(t)            & = U^{\dagger}(t) \hat{a}_{\nu}U(t) = S(0,t)\hat{a}_{\nu}(t)S(t,0)               \\
+	\label{eq1.48}
+	a^{\dagger}_{\nu}(t') & = U^{\dagger}(t) \hat{a}_{\nu}U(t') = S(0,t')\hat{a}^{\dagger}_{\nu}(t')S(t',0)
+\end{align}
+Gọi $\ket{\phi_0}$ là trạng thái cơ bản của Hamilton không nhiễn loạn $H_0$ khi đó trạng thái cơ bản của Hamilton toàn phần $H$ cho bởi \hyperref[eq1.27]{(1.27)}
+\begin{align}
+	\ket{} = S(0,-\infty) \ket{\phi_0}
+\end{align}
+Thay kết quả này và \hyperref[eq1.47]{(1.47)} và \hyperref[eq1.48]{(1.48)} vào \hyperref[eq1.35]{(1.35)} ta được:
+\begin{align}
+	G_{v}(t,t') =
+	 & -i\theta\left( t-t' \right) \bra{\phi_0} S(-\infty,0)S(0,t) \hat{a}_{\nu}(t) S(t,0)\nonumber        \\
+	 & S(0,t')\hat{a}^{+}_{\nu}(t')S(t',0)S(0,-\infty)\ket{\phi_0}\nonumber                                \\
+	 & +i\theta\left( t'-t \right) \bra{\phi_0} S(-\infty,0)S(0,t') \hat{a}^{+}_{\nu}(t') S(t',0)\nonumber \\
+	 & S(0,t)\hat{a}_{\nu}(t)S(t,0)S(0,-\infty)\ket{\phi_0}
+\end{align}
+Vì $S(0,-\infty)\ket{\phi_0} = S(0,\infty)\ket{\phi_0}e^{i\alpha}$ và với \hyperref[eq1.29]{(1.29)} ta được
+\begin{align}
+	\bra{\phi_0} S(-\infty,0) = e^{-i\alpha}\bra{\phi_0}S(\infty,0) = \dfrac{\ket{\phi_0}S(\infty,0)}{ \bra{\phi_0} S(\infty,-\infty)\ket{\phi_0} }
+\end{align}
+Sử dụng đẳng thức này và tính chất \hyperref[tc4]{(4)} của S-matrận, HG \hyperref[eq1.50]{(1.50)} thành:
+\begin{align}
+	G_{\nu}(t,t') & = -i \dfrac{1}{\bra{\phi_0}S(\infty,-\infty)\ket{\phi_0}}\nonumber                                                                       \\
+	\times        & \bigg[ \theta \left( t-t' \right) \bra{\phi_0} S(\infty,t)\hat{a}_{v}(t) S(t,t') \hat{a}_{v}^{+}(t') S(t',-\infty) \ket{\phi_0}\nonumber \\
+	              & - \theta(t'-t)\bra{\phi_0} S(\infty,t')\hat{a}_{\nu}^{+}(t')S(t',t)\hat{a}_{\nu}(t)S(t,-\infty)\ket{\phi_0}\bigg]
+\end{align}
+Áp dụng toán tử thời trình $T$ cho phần $\left[\quad \right]$, với số hạng đầu sẽ là:
+\begin{align}
+	  & \theta \left( t-t' \right) \bra{\phi_0} S(\infty,t)\hat{a}_{v}(t) S(t,t') \hat{a}_{v}^{+}(t') S(t',-\infty) \ket{\phi_0}\nonumber \\
+	= & \theta(t-t') \bra{\phi_0} T \hat{a}_{v}(t) \hat{a}_{v}^{+}(t') S(\infty,-\infty) \ket{\phi_0}\nonumber
+\end{align}
+Như vậy áp dụng cho số hạng còn lại, ta được HG trong biểu diễn D:
+\begin{align}
+	G_{\nu}(t-t') = -i \dfrac{\bra{\phi_0} T \hat{a}_{v}(t) \hat{a}_{v}^{+}(t') S(\infty,-\infty) \ket{\phi_0}}{\bra{\phi_0}S(\infty,-\infty)\ket{\phi_0}}
+\end{align}
+Xét trường hợp không có tương tác, $W = 0 \Rightarrow S = \mathbb{1} $(ma trận đơn vị). Khi đó HG có dạng đơn giản nhất hay còn gọi là HG tự do hoặc HG không nhiễu loạn:
+\begin{align}
+	\label{eq1.54}
+	G_{0,\nu} (t-t') = -i  \bra{\phi_0} T \hat{a}_{v}(t) \hat{a}_{v}^{+}(t')\ket{\phi_0}
+\end{align}
+\subsection{Mối liên hệ giữa HG và một số đại lượng vật lý:}
+\textbf{Mật độ hạt} được cho bởi $\langle n(x) \rangle = \langle \psi^{+}(x) \psi(x) \rangle$. Đại lượng này có liên hệ trực tiếp với HG
+\begin{align}
+	\langle n(x) \rangle = -iG(x,t;x,t^+)
+\end{align}
+trong đó ta dùng $t^+ = \displaystyle\lim_{\delta \rightarrow 0^+}$ để đảm bảo đúng trật tự thời gian\\
+\textbf{Giá trị kỳ vọng của $T$ và $E$}:
+\begin{align}
+	\langle T \rangle & = \displaystyle \int dx \left\langle \dfrac{-\hbar \nabla^2}{2m} \right\rangle \nonumber                                                         \\
+	                  & = -i \displaystyle \int dx \displaystyle\lim_{t' \rightarrow t^+} \displaystyle\lim_{x' \rightarrow x} \dfrac{-\hbar \nabla^2}{2m}  G(x,t;x',t')
+\end{align}
+\begin{align}
+	E & = \left\langle H \right\rangle \nonumber                                                                                                                                                                        \\
+	  & = -\dfrac{i}{2} \displaystyle \int dx \displaystyle\lim_{t' \rightarrow t^+} \displaystyle\lim_{x' \rightarrow x} \left[ i\hbar \dfrac{\partial}{\partial t} - \dfrac{\hbar ^2\nabla^2}{2m}\right] G(x,t;x',t')
+\end{align}
+\newpage
+Chuyển sang không gian Fourier:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{fourier-T-E}
+	\label{fig:fourier-t-e}
+\end{figure}
+
+
+\newpage
+
+\section{Khai triển nhiễu loạn của hàm Green}
+HG trong biểu diễn tương tác phụ thuộc vào $S$-ma trận $S(\infty,-\infty)$, ma trận này là chuỗi vô hạn của tương tác $W$:
+\begin{align}
+	S(\infty,-\infty) & = T \displaystyle e^{-i\int_{-\infty}^{\infty}dt_1 W(t_1)}                                                                \\
+	                  & = 1 + \sum_{n=1}^{\infty} \dfrac{1}{n!}(-i)^n \int_{-\infty}^{\infty}dt_1...dt_n T \left[W(t_1)...W(t_n)\right] \nonumber
+\end{align}
+\subsection{Định lý Wick:}
+
+\subsection*{T-tích}
+Sắp xếp lại các toán tử trường với thời gian trễ nhất nằm bên trái và \textbf{nếu là toán tử fermion thì thêm -1}.\\
+VD: T$\left(\hat{C}_{k_1}(t_1)\hat{C}^{+}_{k}(t)\hat{C}^{+}_{k_1}(t_1)\hat{C}_{k}(t)... \right) = (-1)^{P}T\left(\hat{C}^{+}_{k}(t)\hat{C}_{k}(t)\hat{C}^{+}_{k_1}(t_1)\hat{C}_{k_1}(t_1)... \right) $ với $t>t_1$ và $P$ là số lần hoán vị các toán tử nếu là toán tử fermion
+\subsection*{N-tích}
+Sắp xếp lại các toán tử hủy nằm bên phải của các toán tử sinh, \textbf{nếu nó thay đổi vị trí của các toán tử fermion thì thêm -1}.\\
+Hệ quả:
+\begin{itemize}
+	\item Trung bình chân không của N-tích = 0. Điều này suy ra từ tác động của toán tử hủy cho chân không triệt tiêu: $\hat{C}_{\;\mathbf{k}} \ket{0} = 0$.
+	\item Để giảm bớt những giản đồ chân không (giản đồ không có đường ngoài) không cần thiết người ta thường quy ước rằng: các trường trong Lagrangian hoặc Hamiltonian thường được viết trong dạng N-tích.
+	\item Tuy nhiên khi tính các giản đồ chân không ta phải N-tích đi
+\end{itemize}
+VD N$\left(\hat{C}_{k_1}(t_1)\hat{C}^{+}_{k}(t)\hat{C}^{+}_{k_1}(t_1)\hat{C}_{k}(t)... \right) = (-1)^{P}N\left(\hat{C}^{+}_{k}(t)\hat{C}^{+}_{k_1}(t_1)\hat{C}_{k}(t)\hat{C}_{k_1}(t_1)... \right) $ với $t>t_1$\\
+Ta phải phân biệt được rằng: \textit{ khi áp dụng T-tích thì các toán tử sắp xếp theo thời gian và không cần quan tâm thứ tự các toán tử sinh trước hủy sau(hủy nằm bên phải sinh), và ngược lại khi áp dụng N-tích toán tử sắp xếp theo thứ tự các toán tử sinh hủy (hủy trước sinh sau) va không cần quan tâm thứ tự thời gian.}
+
+Kết hợp những điều trên, người ta đưa ra định lý Wick:
+
+\indent \textit{Định lý Wick:} T-tích của các toán tử bằng tổng các N-tích của chúng với mọi kết cặp khả dĩ, kể cả N-tích không có kết cặp.
+\begin{enumerate}
+	\item những bắt cặp của toán tử sinh với sinh, hủy với hủy không có đóng góp:
+	      \begin{align}
+		      \bra{}T[ a_{\mu}(t)a_{\nu}(t_2) ]\ket{} = \bra{} T [ a^{\dagger}_{\mu}(t)a^{\dagger}_{\nu}(t_2) ]\ket{} = 0 \; \text{dù $\mu=\nu$ hoặc $\mu \neq \nu$} \nonumber
+	      \end{align}
+	\item ta chỉ còn cặp toán tử sinh và hủy
+	      \begin{align}
+		      \bra{}T[ a_{\mu}(t)a^{\dagger}_{\nu}(t_2) ]\ket{} = \delta_{\mu,\nu}\bra{}T[ a_{\mu}(t)a^{\dagger}_{\mu}(t_2) ]\ket{} \nonumber
+	      \end{align}
+	      Như vậy với $n$ toán tử sinh và $n$ toán tử hủy, ta có $n!$ cặp.
+	\item $\bra{}a_{\mu}(t)\ket{}=\bra{}a^{\dagger}_{\mu}(t) \ket{} = 0 $ vì thế T-tích của số lẻ các toán tử đều = 0.
+	\item Mỗi lần hoán vị toán tử fermion: nhân thêm (-1)
+	\item Khi xét T-tích của cặp toán tử sinh hủy $\bra{}T[ a_{\mu}(t)a^{\dagger}_{\nu}(t_2) ]\ket{}$
+	      \begin{itemize}
+		      \item Nếu cùng thời gian thì các toán tử sinh được đặt bên trái(dùng phản giao hoán tử nếu đó là toán tử fermion):
+		            \begin{align}
+			            \bra{}T[ a_{\mu}(t)a^{\dagger}_{\nu}(t) ]\ket{} = \delta_{k,k_2}[-iG_{k}^{0}(t,t^+)]=\delta_{k,k_2} \langle n \rangle = \delta_{k,k_2} n_k  \nonumber
+		            \end{align}
+		      \item Nếu khác thời gian thì toán tử sinh được đặt bên phải:
+		            \begin{align}
+			            \bra{}T[ a_{\mu}(t)a^{\dagger}_{\nu}(t_2) ]\ket{} = i \delta_{k,k_2} G^0_{k}(t-t_2)\nonumber
+		            \end{align}
+	      \end{itemize}
+	\item T-tích chứa các toán tử khác loại(VD: electron và phonon) và giao hoán được thì có thể tách thành T-tích của mỗi loại:
+	      \begin{align}
+		      \bra{}T[ a_{k  }(t)B_{k_2}(t_2)a^{\dagger}_{k_1}(t) ](t_1)B_{k_3}(t_3)\ket{} = \bra{}T[ a_{k  }(t)a^{\dagger}_{k_1}(t) ](t_1)\ket{}\bra{}T[ B_{k_2}(t_2)B_{k_3}(t_3)\ket{}\nonumber
+	      \end{align}
+\end{enumerate}
+\newpage
+\subsection{Khai triển nhiễu loạn}
+Ta khảo sát HG, trước hết ta viết tử số của HG dưới dạng chuỗi, khi đó:
+\begin{align}
+	G_{\mu}(t-t') & = -i \dfrac{\bra{}Ta_{\nu}(t)a_{\nu}^{\dagger}(t')S(\infty,-\infty)\ket{}}{\bra{} S(\infty,-\infty)\ket{}} \nonumber                                                                                      \\
+	              & = \dfrac{1}{{\bra{} S(\infty,-\infty)\ket{}}}\sum_{n=0}^{\infty}\dfrac{1}{n!}\left( -i \right)^{n+1}\int_{-\infty}^{\infty}dt_1...dt_n\bra{}T\left[ W(t_1)...W(t_n)a_{\nu}(t)a_{\nu}^{\dagger}(t')\right]
+\end{align}
+Trong đó, $\ket{}$ là hàm sóng ở trạng thái cơ bản.\\
+Ta xét riêng phần tử số của HG. Phần tử cần quan tâm là $T\left[ W(t_1)...W(t_n)a_{\nu}(t)a_{\nu}^{\dagger}(t')\right]$, xét tới 2 tương tác điển hình là tương tác e-e(qua thế Coulomb) và tương tác e-phonon(e-ph).
+
+Tương tác hạt điện qua thế tương tác Coulomb có dạng:
+\begin{align}
+	W(t) = \dfrac{1}{2} \displaystyle\sum_{k,k',q\neq0}^{}V_0(q)a^{\dagger}_{k'-q}(t)a_{k+q}(t)a_{k'}(t)a_{k}(t)
+\end{align}
+trong đó $V_0(q) = \dfrac{4\pi e^2}{L^3\epsilon q^2}$. Số hạng $q = 0$ đã bị triệt tiêu với nền phông dương khi ta xét tới những bài toán như Hartree.
+
+Tương tác e-ph:
+\begin{align}
+	W(t) = \sum_{k,q}^{}M_q a_{k+q}^{\dagger}(t)a_{k}(t)\left[ b_q(t)+b_{-q}^{\dagger}(t) \right] = \sum_{k,q}^{}M_q a_{k+q}^{\dagger}(t)a_{k}(t) B_q(t)
+\end{align}
+
+Với định lý Wick, ta khảo sát HG trong trường hợp tương tác e-phonon. Số hạng với n=1 bằng 0(do $\bra{}B_{q1}(t)\ket{} = 0$) nên ta còn số hạng n=2,3.... Tử số của HG sẽ có dạng:
+
+\begin{align}
+	G_{k}^{0}(t-t') & + \dfrac{\left( -i \right)}{2!}\int_{\infty}^{\infty}dt_1 dt_2\sum_{q_1q_2}M_{q1}M_{q_2}\underbrace{\bra{}TB_{q_1}(t_1)B^{\dagger}_{q_2}(t_2)\ket{}}_{phonon} \nonumber \\
+	                & \times \sum_{k_1 k_2}\underbrace{\bra Ta^{\dagger}_{k_1 + q_1}(t_1)a_{k_1}(t_1)a^{\dagger}_{k_2 + q_2}(t_2)a_{k_2}(t_2)a_{k}(t)a^{\dagger}_{k}(t')\ket{}}_{electron}    \\
+	                & + ... \nonumber
+\end{align}
+
+T-tích toán tử của phonon cho dạng:
+\begin{align}
+	(phonon)\rightarrow-i \bra{}TB_{q_1}(t_1)B^{\dagger}_{q_2}(t_2)\ket{} = \delta_{q_1=-q_2} D^{0}_{q_1}(t1-t2)
+\end{align}
+
+T-tích của các toán tử electron cho 6 tổ hợp của các T-tích của các cặp:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{T-tich(e)(ẹ-ph)}
+	\label{fig:t-tichee-ph}
+\end{figure}
+
+Hoặc chuyển đổi sang HG tự do và toán tử số hạt ta được:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{HGtudo(e)(ẹ-ph)}
+	\label{fig:hgtudoee-ph}
+\end{figure}
+
+\noindent Việc đổi chỗ các toán tử fermion đã sử dụng phản giao hoán tử:
+\begin{align}
+	\{c_{k}(t),c_{k'}(t')\}           & = \{c^{\dagger}_{k}(t),c^{\dagger}_{k'}(t')\} = 0                                           \\
+	\{c^{\dagger}_{k}(t),c_{k'}(t')\} & = c^{\dagger}_{k}(t)c_{k'}(t') + c_{k'}(t')c^{\dagger}_{k}(t) = \delta_{k,k'} \delta_{t,t'}
+\end{align}
+Khi ta đổi chỗ các toán tử sẽ xuất hiện các thành phần $\delta$, các $\delta$ này thực chất sẽ bị triệt tiêu sau khi ta dùng toán học đơn thuần.
+\newpage
+\subsection{Giản đồ Feynmann}
+Các nguyên tắc để vẽ giản đồ:
+\begin{itemize}
+	\item HG fermion $G_k^0 (t-t')$ được biểu diễn bằng đường liền nét với mũi tên đi từ $t'$ đến $t$.
+	\item HG phonon(boson vô hướng) $D_q^0 (t-t')$ được biểu diễn bằng đường cách nét nối $t'$ và $t$. HG boson vector được biểu thị bằng đường sóng nối  $t'$ và $t$.
+	\item Thế Coulomb được biểu diễn bằng đường sóng hoặc zigzac nối $t'$ và $t$.
+	\item Mật độ $n$ được biểu thị bằng đường vòng kín bắt đầu và kết thúc tại cùng một điểm.
+	\item Bảo toàn xung lượng tại mỗi đỉnh được thể hiện qua hàm $\delta$
+\end{itemize}
+\newpage
+Giản đồ Feynmann cho trường hợp tương tác e-phonon:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{feyman-eph}
+	\label{fig:feyman-eph}
+\end{figure}
+
+
+\newpage
+
+Với $W(t)$ là thế tương tác Coulomb:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{trang7}
+	\label{fig:trang7}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{trang8}
+	\label{fig:trang8}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth, height=0.3\textheight]{trang9}
+	\label{fig:trang9}
+\end{figure}
+
+
+\newpage
+Giản đồ Feynmann cho trường hợp tương tác Coulomb(e-e):
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{feyman-ee}
+	\label{fig:feyman-ee}
+\end{figure}
+
+
+\end{document}
