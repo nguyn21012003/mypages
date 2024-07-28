@@ -1,5 +1,5 @@
 import SearchBar from "../../component/searchbar";
-import SectionDivider from "../../component/sectiondivider";
+import SectionDivider from "../../component/sectiondivider.tsx";
 
 export const LayoutCourse: React.FC = () => {
   return (
