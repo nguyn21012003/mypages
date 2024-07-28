@@ -1,7 +1,7 @@
 import SectionDivider from "./component/sectiondivider";
 import { HiOutlineHome, HiOutlineUserCircle } from "react-icons/hi2";
 import { VscFeedback } from "react-icons/vsc";
-import { AiOutlineSetting } from "react-icons/ai";
+
 import { TbGridDots } from "react-icons/tb";
 import { PiFlowArrowLight, PiPuzzlePiece, PiBooks } from "react-icons/pi";
 
