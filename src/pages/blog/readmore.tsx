@@ -49,7 +49,7 @@ export const HomeMore = () => {
         <p className="text-center">
           <div className="select-none">
             <img
-              src={Logo}
+              src="/logo.svg"
               alt=""
               className="-mt-[10rem] ml-[10rem] size-[30rem] rounded-2xl"
             />
