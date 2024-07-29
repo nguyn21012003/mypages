@@ -47,12 +47,8 @@ export const HomeMore = () => {
           </h2>
         </p>
         <p className="text-center">
-          <div className="select-none">
-            <img
-              src="/logo.svg"
-              alt=""
-              className="-mt-[10rem] ml-[10rem] size-[30rem] rounded-2xl"
-            />
+          <div className="-mt-16 mb-10 flex select-none items-center justify-center rounded-2xl">
+            <img src="./logo.svg" alt="" className="size-[20rem]" />
           </div>
           <a className="font-Poppins text-xl text-[#7A8BA3]">
             This logo was inspired by the phrase: "Shut up and calculate!" from
