@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import SectionDivider from "./component/sectiondivider";
 import { HiOutlineHome, HiOutlineUserCircle } from "react-icons/hi2";
 import { VscFeedback } from "react-icons/vsc";
@@ -30,7 +32,7 @@ export const Sidebar = () => {
           ></path>
         </svg>
       </button>
-      <div className="fixed h-screen w-20 rounded-full bg-[#253a4d] blur-[10rem]"></div>
+      <div className="fixed h-screen w-20 -translate-x-[40rem] rounded-full bg-[#253a4d] blur-[10rem] md:translate-x-[0rem]"></div>
       <aside
         id="default-sidebar"
         className="fixed left-0 top-0 z-40 h-full w-[203px] -translate-x-full transition-transform xl:translate-x-0"
@@ -39,56 +41,56 @@ export const Sidebar = () => {
         <div className="h-full overflow-y-auto border-r border-gray-200 bg-transparent px-3 py-5 dark:border-gray-700 dark:bg-gray-800">
           <ul className="space-y-2">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-white hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <HiOutlineHome></HiOutlineHome>
                 <span className="ml-3">Homepage</span>
-              </a>
+              </Link>
               <SectionDivider></SectionDivider>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-[#878f9b] hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <HiOutlineUserCircle></HiOutlineUserCircle>
                 <span className="ml-3">About me</span>
-              </a>
-              <a
-                href="/course/layout"
+              </Link>
+              <Link
+                to="/course/layout"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-[#878f9b] hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <PiFlowArrowLight />
                 <span className="ml-3">Course</span>
-              </a>
-              <a
-                href="/about"
+              </Link>
+              <Link
+                to="/about"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-[#878f9b] hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <PiBooks />
                 <span className="ml-3">Topics</span>
-              </a>
-              <a
-                href="/blog/mission"
+              </Link>
+              <Link
+                to="/blog/mission"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-[#878f9b] hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <PiPuzzlePiece />
                 <span className="ml-3">Projects</span>
-              </a>
-              <a
-                href="/about"
+              </Link>
+              <Link
+                to="/about"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-[#878f9b] hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <TbGridDots />
                 <span className="ml-3">Extras</span>
-              </a>
-              <a
-                href="/feedback/form"
+              </Link>
+              <Link
+                to="/feedback/form"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-[#878f9b] hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <VscFeedback />
                 <span className="ml-3">Feedback</span>
-              </a>
+              </Link>
 
               <SectionDivider></SectionDivider>
               <a className="font-Poppins text-sm italic text-[#878f9b] dark:text-white dark:hover:bg-gray-700">
@@ -99,13 +101,13 @@ export const Sidebar = () => {
               <a className="font-Poppins text-sm italic text-[#878f9b] dark:text-white dark:hover:bg-gray-700">
                 <span className="">Poppular</span>
               </a>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="group flex items-center rounded-lg p-2 text-base font-normal text-[#878f9b] hover:backdrop-brightness-125 dark:text-white dark:hover:bg-gray-700"
               >
                 <VscFeedback />
                 <span className="ml-3">De cac khoa hoc</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { HiArrowUpRight } from "react-icons/hi2";
 
-export default function RecentlyPost() {
+export default function Timeline() {
   return (
     <div className="space-y-[2.5rem]">
       <p className="text-center">

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BsYoutube } from "react-icons/bs";
 export const Homepage = () => {
   return (
@@ -25,12 +26,13 @@ export const Homepage = () => {
           </a>
         </p>
         <p>
-          <a
-            className="text-white hover:underline hover:transition-transform hover:duration-300"
-            href="/readmore"
+          <Link
+            to="/readmore"
+            className="text-[#ffff] text-white dark:text-[#E2E8F0]"
           >
-            Read more
-          </a>
+            {" "}
+            <a>Read more</a>
+          </Link>{" "}
         </p>
       </div>
     </div>
