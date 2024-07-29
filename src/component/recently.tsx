@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { HiArrowUpRight } from "react-icons/hi2";
 
 export default function RecentlyPost() {
@@ -7,7 +9,7 @@ export default function RecentlyPost() {
         <a className="font-Poppins text-3xl text-white">Recently</a>
       </p>
       <div className="flex flex-wrap gap-10">
-        <a href="/blog/layout" className="group">
+        <Link to="/blog/layout" className="group">
           <div className="h-[13rem] w-[24rem] rounded-xl bg-transparent p-4 backdrop-blur backdrop-brightness-125 group-hover:backdrop-brightness-200">
             <div className="space-y-2">
               <p>
@@ -31,9 +33,9 @@ export default function RecentlyPost() {
               </p>
             </div>
           </div>
-        </a>
+        </Link>
 
-        <a href="/blog/layout" className="group">
+        <Link to="/blog/layout" className="group">
           <div className="h-[13rem] w-[24rem] rounded-xl bg-transparent p-4 backdrop-blur backdrop-brightness-125 group-hover:backdrop-brightness-200">
             <div className="space-y-2">
               <p>
@@ -57,7 +59,7 @@ export default function RecentlyPost() {
               </p>
             </div>
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

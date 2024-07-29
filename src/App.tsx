@@ -1,15 +1,14 @@
 import { useState } from "react";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 import { Homepage } from "./pages/Home";
 import { About } from "./pages/About";
 import { BlogLayout } from "./pages/blog/layout";
 import { HomeMore } from "./pages/blog/readmore";
 import { Layout } from "./pages/topics/layout";
 import { LayoutCourse } from "./pages/course/layout";
-
 import { Sidebar } from "./sidebar";
-
 import { GoSun, GoMoon } from "react-icons/go";
 import { FormFeedback } from "./pages/feedback/form";
 
@@ -30,28 +29,25 @@ export const App: React.FC = () => {
       >
         {darkMode ? <GoSun></GoSun> : <GoMoon></GoMoon>}
       </button>
-      <Router>
-        <div className={`${darkMode && "dark"}`}>
-          <Sidebar></Sidebar>
-          <div>
-            <Routes>
-              <Route path="/" element={<Homepage></Homepage>} />
-              <Route path="/about" element={<About />} />
-              <Route path="/blog/layout" element={<BlogLayout></BlogLayout>} />
-              <Route path="/readmore" element={<HomeMore></HomeMore>} />
-              <Route path="/topics/layout" element={<Layout></Layout>} />
-              <Route
-                path="/course/layout"
-                element={<LayoutCourse></LayoutCourse>}
-              />
-              <Route
-                path="/feedback/form"
-                element={<FormFeedback></FormFeedback>}
-              />
-            </Routes>
-          </div>
-        </div>
-      </Router>
+      <Sidebar></Sidebar>
+
+      <div className={`${darkMode && "dark"}`}>
+        <Routes>
+          <Route path="/" element={<Homepage></Homepage>} />
+          <Route path="/about" element={<About></About>} />
+          <Route path="/blog/layout" element={<BlogLayout></BlogLayout>} />
+          <Route path="/readmore" element={<HomeMore></HomeMore>} />
+          <Route path="/topics/layout" element={<Layout></Layout>} />
+          <Route
+            path="/course/layout"
+            element={<LayoutCourse></LayoutCourse>}
+          />
+          <Route
+            path="/feedback/form"
+            element={<FormFeedback></FormFeedback>}
+          />
+        </Routes>
+      </div>
     </div>
   );
 };

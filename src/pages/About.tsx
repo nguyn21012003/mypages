@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "M:/codespace/NewVite/src/lib/logo.svg";
 
 import { HiAcademicCap } from "react-icons/hi";
 import Trimmed from "../component/trimmed";
@@ -8,7 +7,7 @@ import RecentlyPost from "../component/recently";
 
 export const About: React.FC = () => {
   return (
-    <div className="w-full space-y-[6rem]">
+    <div className="w-full space-y-[6.1rem]">
       <div className="flex items-center justify-center">
         <div className="bg-transparent sm:backdrop-blur-none md:max-w-[50rem] md:backdrop-blur-sm lg:backdrop-blur-sm 2xl:backdrop-blur-sm">
           <div className="md:flex">
@@ -16,7 +15,7 @@ export const About: React.FC = () => {
               <img
                 alt="Khoi Nguyen Tran"
                 className="size-20 self-start rounded-full border-[4px]"
-                src={Logo}
+                src="/logo.svg"
               ></img>
               <p>
                 <a className="font-Poppins text-lg font-semibold">
