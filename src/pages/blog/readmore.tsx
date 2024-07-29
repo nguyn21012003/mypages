@@ -51,7 +51,7 @@ export const HomeMore = () => {
             <img
               src="./logo.svg"
               alt=""
-              className="-mt-[10rem] ml-[10rem] size-[30rem] rounded-2xl"
+              className="-mt-[10rem] ml-[10rem] h-[20rem] w-[28rem] rounded-2xl"
             />
           </div>
           <a className="font-Poppins text-xl text-[#7A8BA3]">
