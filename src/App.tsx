@@ -7,9 +7,7 @@ import { BlogLayout } from "./pages/blog/layout";
 import { HomeMore } from "./pages/blog/readmore";
 import { Layout } from "./pages/topics/layout";
 import { LayoutCourse } from "./pages/course/layout";
-
 import { Sidebar } from "./sidebar";
-
 import { GoSun, GoMoon } from "react-icons/go";
 import { FormFeedback } from "./pages/feedback/form";
 
@@ -36,22 +34,20 @@ export const App: React.FC = () => {
           <div>
             <Routes>
               <Route path="/" element={<Homepage></Homepage>} />
-              <Route path="/about" element={<About />} />
-              <Route path="/blog/layout" element={<BlogLayout></BlogLayout>} />
-              <Route path="/readmore" element={<HomeMore></HomeMore>} />
-              <Route path="/topics/layout" element={<Layout></Layout>} />
-              <Route
-                path="/course/layout"
-                element={<LayoutCourse></LayoutCourse>}
-              />
-              <Route
-                path="/feedback/form"
-                element={<FormFeedback></FormFeedback>}
-              />
-            </Routes>
-          </div>
-        </div>
-      </Router>
+          <Route path="/about" element={<About></About>} />
+          <Route path="/blog/layout" element={<BlogLayout></BlogLayout>} />
+          <Route path="/readmore" element={<HomeMore></HomeMore>} />
+          <Route path="/topics/layout" element={<Layout></Layout>} />
+          <Route
+            path="/course/layout"
+            element={<LayoutCourse></LayoutCourse>}
+          />
+          <Route
+            path="/feedback/form"
+            element={<FormFeedback></FormFeedback>}
+          />
+        </Routes>
+      </div>
     </div>
   );
 };

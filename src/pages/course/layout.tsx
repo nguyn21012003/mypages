@@ -31,7 +31,6 @@ export const LayoutCourse: React.FC = () => {
             <a href="">Browse</a>
           </p>
         </div>
-
         <SectionDivider></SectionDivider>
         <div>
           <SearchBar></SearchBar>

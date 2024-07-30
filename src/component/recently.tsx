@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { HiArrowUpRight } from "react-icons/hi2";
 
 export default function RecentlyPost() {

@@ -1,5 +1,3 @@
-import Logo from "M:/codespace/NewVite/src/lib/logo.svg";
-
 export const HomeMore = () => {
   return (
     <div className="z-50 flex h-full w-full items-center justify-center">
