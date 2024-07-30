@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { HiArrowUpRight } from "react-icons/hi2";
 
-export default function RecentlyPost() {
+export default function Timeline() {
   return (
     <div className="space-y-[2.5rem]">
       <p className="text-center">
@@ -16,7 +16,7 @@ export default function RecentlyPost() {
                 <a className="font-Poppins font-semibold text-white">
                   Theoretical of Many-body
                 </a>
-                <HiArrowUpRight className="mb-1 inline-block text-sky-500 opacity-0 group-hover:opacity-100"></HiArrowUpRight>
+                <HiArrowUpRight className="mb-1 inline-block opacity-0 group-hover:text-sky-500 group-hover:opacity-100"></HiArrowUpRight>
               </p>
               <p>
                 <a className="text-normal text-[#878f9b]">
@@ -42,7 +42,7 @@ export default function RecentlyPost() {
                 <a className="font-Poppins font-semibold text-white">
                   Theoretical of Many-body
                 </a>
-                <HiArrowUpRight className="mb-1 inline-block text-sky-500 opacity-0 group-hover:opacity-100"></HiArrowUpRight>
+                <HiArrowUpRight className="mb-1 inline-block opacity-0 group-hover:text-sky-500 group-hover:opacity-100"></HiArrowUpRight>
               </p>
               <p>
                 <a className="text-normal text-[#878f9b]">
