@@ -125,6 +125,9 @@ export const About: React.FC = () => {
           <RecentlyPost></RecentlyPost>
         </div>
       </div>
+      <div className="flex items-center justify-center pb-[10rem]">
+        <Timeline></Timeline>
+      </div>
     </div>
   );
 };
