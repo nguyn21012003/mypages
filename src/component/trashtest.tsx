@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { VscFeedback } from "react-icons/vsc";
-const NavBar: React.FC = () => {
+const Handle: React.FC = () => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -38,4 +38,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default Handle;
