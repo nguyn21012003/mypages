@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HiArrowUpRight } from "react-icons/hi2";
 
-export const RecentlyPost = () => {
+export const PostCourse = () => {
   const TAGS = [
     {
       tag: "Theory of Many-body",
@@ -32,7 +32,6 @@ export const RecentlyPost = () => {
 
   return (
     <div className="space-y-[2.5rem]">
-      <h1 className="text-center text-3xl text-white">Recently</h1>
       <div className="flex flex-col gap-10">
         {TAGS.map((item, index) => (
           <Link
@@ -42,7 +41,7 @@ export const RecentlyPost = () => {
             className="group"
           >
             <div className="h-fit w-[20rem] rounded-xl bg-transparent p-4 backdrop-blur backdrop-brightness-125 group-hover:backdrop-brightness-200 md:w-[30rem] xl:w-[40rem]">
-              <div className="space-y-2"></div>
+              <div className="space-y-2">Browse de nhap{TAGS.length}</div>
               <p>
                 <span className="font-semibold text-white">{item.tag}</span>{" "}
                 <HiArrowUpRight className="mb-1 inline-block text-sky-500 opacity-0 group-hover:opacity-100"></HiArrowUpRight>
