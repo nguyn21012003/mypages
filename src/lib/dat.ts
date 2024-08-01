@@ -24,6 +24,3 @@ export const Showcase = [
   "Example",
   "Example",
 ] as const;
-export const ShortParaDat = [
-  "The physical world consists of interacting many-particle systems. We shall rely on second quantization, quantum-field theory(QFT), and the use of Green's function.",
-];

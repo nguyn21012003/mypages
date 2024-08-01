@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import { BsYoutube } from "react-icons/bs";
 export const Homepage = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center">
-      <div className="w-[40rem] space-y-10 bg-transparent lg:ml-10">
+      <div className="w-[40rem] space-y-10 bg-transparent">
         <h1 className="font-Poppins text-3xl font-medium text-[#ffff] dark:text-[#E2E8F0]">
           Home
         </h1>{" "}
@@ -26,13 +25,12 @@ export const Homepage = () => {
           </a>
         </p>
         <p>
-          <Link
-            to="/readmore"
-            className="text-[#ffff] text-white dark:text-[#E2E8F0]"
+          <a
+            className="text-white hover:underline hover:transition-transform hover:duration-300"
+            href="/readmore"
           >
-            {" "}
-            <a>Read more</a>
-          </Link>{" "}
+            Read more
+          </a>
         </p>
       </div>
     </div>

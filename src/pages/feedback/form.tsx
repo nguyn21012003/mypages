@@ -1,33 +1,8 @@
-import { Link } from "react-router-dom";
-
 export const FormFeedback: React.FC = () => {
   return (
     <div className="">
       <form className="flex h-screen w-full items-center justify-center">
-        <div className="text-2xl">
-          <p>
-            <a
-              href="https://forms.gle/wBy5rEtEXBmLGqY28"
-              title="https://forms.gle/wBy5rEtEXBmLGqY28"
-              className="text-[#878f9b] hover:text-white hover:underline"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              You can acces this link via google form to write feedback for us
-            </a>
-          </p>
-          <p>
-            <a className="text-[#878f9b]">
-              Or in case you don't want to acces via link you can contact me at
-              tab
-            </a>
-            <Link to="/about" className="text-white">
-              {" "}
-              About me{" "}
-            </Link>
-          </p>
-        </div>
-        <div className="hidden space-y-12">
+        <div className="space-y-12">
           <div className="space-y-4">
             <h2 className="">Profile</h2>
             <a className="">Your personal information is protected</a>

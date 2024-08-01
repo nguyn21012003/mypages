@@ -3,7 +3,7 @@ import { HiMagnifyingGlass } from "react-icons/hi2";
 export default function SearchBar() {
   return (
     <div>
-      <form className="">
+      <form className="mx-auto max-w-md">
         <label
           htmlFor="default-search"
           className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"

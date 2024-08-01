@@ -1,41 +1,20 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { VscFeedback } from "react-icons/vsc";
-const NavBar: React.FC = () => {
-  const [isFocused, setIsFocused] = useState<boolean>(false);
-  const divRef = useRef<HTMLDivElement>(null);
-
-  const handleDivClick = () => {
-    setIsFocused(true);
-    if (divRef.current) {
-      divRef.current.focus();
-    }
-  };
-
-  useEffect(() => {
-    if (isFocused && divRef.current) {
-      divRef.current.focus();
-    }
-  }, [isFocused]);
-
+export default function Poptitle() {
   return (
     <div
-      ref={divRef}
-      tabIndex={0}
-      onClick={handleDivClick}
-      className={`rounded p-4 text-white ${isFocused ? "bg-blue-500" : "bg-gray-700"} focus:outline-none focus:ring-2 focus:ring-blue-400`}
+      data-popover
+      id="popover-default"
+      role="tooltip"
+      className="invisible absolute z-10 inline-block w-64 rounded-lg border border-gray-200 bg-white text-sm text-gray-500 opacity-0 shadow-sm transition-opacity duration-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400"
     >
-      <Link
-        to=""
-        className="group flex items-center rounded-lg p-2 text-base font-normal hover:backdrop-brightness-125 focus:backdrop-brightness-200 dark:hover:bg-gray-700"
-      >
-        <VscFeedback className="text-[#878f9b] group-focus:text-sky-500" />
-        <span className="ml-3 text-[#878f9b] group-focus:text-white dark:text-white">
-          Feedback
-        </span>
-      </Link>
+      <div className="rounded-t-lg border-b border-gray-200 bg-gray-100 px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
+        <h3 className="font-semibold text-gray-900 dark:text-white">
+          Popover title
+        </h3>
+      </div>
+      <div className="px-3 py-2">
+        <p>And here's some amazing content. It's very engaging. Right?</p>
+      </div>
+      <div data-popper-arrow></div>
     </div>
   );
-};
-
-export default NavBar;
+}
