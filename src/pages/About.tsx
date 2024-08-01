@@ -23,19 +23,15 @@ export const About: React.FC = () => {
                   src="/me.jpg"
                 ></img>
                 <p>
-                  <a className="font-Poppins text-lg font-semibold">
-                    Khoi Nguyen Tran
-                  </a>
+                  <a className="text-lg font-semibold">Khoi Nguyen Tran</a>
                 </p>
                 <p>
-                  <a className="font-Poppins text-lg font-semibold">
+                  <a className="text-lg font-semibold">
                     Dep. of Theoretical Physics
                   </a>
                 </p>
                 <p>
-                  <a className="font-Poppins text-lg font-semibold">
-                    CONTACT ME AT
-                  </a>
+                  <a className="text-lg font-semibold">CONTACT ME AT</a>
                 </p>
                 <div className="flex space-x-2">
                   <a
@@ -92,18 +88,18 @@ export const About: React.FC = () => {
               </div>
               <div className="space-y-14 p-8">
                 <div className="space-y-5">
-                  <div className="text-justify font-Poppins text-3xl font-semibold uppercase tracking-wide text-white">
+                  <div className="text-justify text-3xl font-semibold uppercase tracking-wide text-white">
                     # who am i
                   </div>
                   <p className="text-justify">
-                    <a className="font-Poppins text-lg font-normal leading-tight text-[#7A8BA3] md:max-w-[64em]">
+                    <a className="text-lg font-normal leading-tight text-[#7A8BA3] md:max-w-[64em]">
                       👋 You can call me Jeremy . As you can see, my name is
                       inspired alot by the character Jeremy Jonhson in Phineas &
                       Ferb cartoon.
                     </a>
                   </p>
                   <p className="text-justify">
-                    <a className="font-Poppins text-lg font-normal leading-tight text-[#7A8BA3] md:max-w-[64em]">
+                    <a className="text-lg font-normal leading-tight text-[#7A8BA3] md:max-w-[64em]">
                       Tran Khoi Nguyen aka Khoi Nguyen Tran aka Jeremy is a
                       senior physics student with a passion for Theoretical
                       Physics
