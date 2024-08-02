@@ -2,7 +2,6 @@ import SectionDivider from "../../component/sectiondivider.tsx";
 
 import { Link } from "react-router-dom";
 import { HiArrowUpRight } from "react-icons/hi2";
-
 import { PostShowcase } from "../../lib/dat";
 
 import { useState } from "react";
