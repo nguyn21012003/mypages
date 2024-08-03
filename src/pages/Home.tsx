@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import { BsYoutube } from "react-icons/bs";
 export const Homepage = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center">
-      <div className="w-[40rem] space-y-10 bg-transparent">
+      <div className="mx-10 w-[40rem] space-y-10 bg-transparent md:ml-20">
         <h1 className="font-Poppins text-3xl font-medium text-[#ffff] dark:text-[#E2E8F0]">
           Home
         </h1>{" "}
-        <p>
-          <h1 className="font-Poppins font-normal text-[#ffff] dark:text-[#E2E8F0]">
+        <div>
+          <h1 className="font-normal text-[#ffff] dark:text-[#E2E8F0]">
             Welcome to our page, a place to read theoretical physics from
             quantum to cosmo.{" "}
           </h1>
@@ -20,18 +21,17 @@ export const Homepage = () => {
             Check out our official youtube channel{" "}
             <BsYoutube className="inline-block stroke-white text-[#ff0000]" />
           </a>{" "}
-          <a className="font-Poppins text-white">
-            to get an overview what are we doing
-          </a>
-        </p>
-        <p>
-          <a
-            className="text-white hover:underline hover:transition-transform hover:duration-300"
-            href="/readmore"
+          <a className="text-white">to get an overview what are we doing</a>
+        </div>
+        <div>
+          <Link
+            to="/readmore"
+            className="text-[#ffff] text-white dark:text-[#E2E8F0]"
           >
-            Read more
-          </a>
-        </p>
+            {" "}
+            <a>Read more</a>
+          </Link>{" "}
+        </div>
       </div>
     </div>
   );

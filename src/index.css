@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 :hover * {
-  @apply transition-colors duration-0;
+  @apply transition-colors duration-200;
 }
 .dark * {
   @apply transition-colors duration-200;
 }
+
 .my-backround {
   height: 100vh;
   width: 100%;
   background-image: linear-gradient(#253a4d, #161a1d);
+}
+* {
+  @apply transition-colors duration-700;
 }

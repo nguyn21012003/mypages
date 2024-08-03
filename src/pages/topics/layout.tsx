@@ -14,7 +14,7 @@ export const Layout = () => {
       <div className="bg-[#F8FAFC] py-4 text-center dark:bg-[#1F2937]">
         <div>
           <div className="mx-10 items-center justify-center space-y-20">
-            <h1 className="text-center font-Poppins text-4xl font-bold">
+            <h1 className="text-center text-4xl font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
