@@ -10,7 +10,6 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { CiLinkedin } from "react-icons/ci";
 */
 
-
 export const MyFooter: React.FC = () => {
   const year = new Date().getFullYear();
   return (
