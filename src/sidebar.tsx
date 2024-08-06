@@ -93,8 +93,8 @@ export const Sidebar = () => {
       <motion.aside
         id="default-sidebar"
         initial={false}
-        className={`fixed right-0 z-40 m-[1rem] h-fit w-[200px] rounded-2xl backdrop-blur-xl lg:left-0 lg:m-0 lg:h-full ${
-          isOpen ? "translate-x-[0rem] " : "translate-x-[20rem] lg:opacity-100"
+        className={`fixed right-0 z-40 m-[1rem] h-[20rem] w-[200px] rounded-2xl backdrop-blur-xl lg:left-0 lg:m-0 lg:h-full ${
+          isOpen ? "translate-x-[0rem]" : "translate-x-[20rem] lg:opacity-100"
         } translate-y-[4rem] lg:translate-x-0 lg:translate-y-0 lg:backdrop-blur-none`}
         aria-label="Sidenav"
         ref={sidebarRef}
