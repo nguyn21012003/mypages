@@ -1,11 +1,11 @@
+import { useState } from "react";
+
 import SectionDivider from "../../component/sectiondivider.tsx";
 
 import { Link } from "react-router-dom";
 import { HiArrowUpRight } from "react-icons/hi2";
 import { GoHourglass } from "react-icons/go";
 import { PostShowcase } from "../../lib/dat";
-
-import { useState } from "react";
 
 export const LayoutCourse: React.FC = () => {
   const [search, setSearch] = useState("");

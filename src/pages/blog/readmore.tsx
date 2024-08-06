@@ -18,9 +18,7 @@ export const HomeMore = () => {
         </h2>
         <p className="text-center">
           <span className="text-xl text-[#101720] dark:text-[#7A8BA3]">
-            This website was created to bring Theoretical Physics to{" "}
-            <u>physics students</u> who are studying as freshmen or juniors in
-            university. Beyond this creation, its was inspired by{" "}
+            Beyond this creation, its was inspired by{" "}
             <a
               href="https://ocw.mit.edu/"
               className="underline decoration-sky-500"
@@ -58,9 +56,9 @@ export const HomeMore = () => {
         <p className="text-center">
           <a className="text-xl text-[#101720] dark:text-[#7A8BA3]">
             This website was created to bring Theoretical Physics to{" "}
-            <u className="decoration-white">physics students</u> who are
-            studying as freshmen or juniors in university. It is a collaborative
-            effort by enthusiasts of Theoretical Physics from HCMUS.
+            <u className="decoration">physics students</u> who are studying as
+            freshmen or juniors in university. It is a collaborative effort by
+            enthusiasts of Theoretical Physics from HCMUS.
           </a>
         </p>
         <p className="text-center">
