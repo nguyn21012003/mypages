@@ -1,4 +1,10 @@
+import React, { useState } from "react";
+
 export const PythonLayout: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleOpenCourse = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="flex h-full w-full bg-transparent">
       <div className="mx-4 mb-10 flex flex-col text-pretty lg:ml-[14rem]">
@@ -22,6 +28,21 @@ export const PythonLayout: React.FC = () => {
           This 10-weeks of material will teach you Python through a mix between
           tutorials and interactive coding challenges.
         </h3>
+        <button
+          onClick={toggleOpenCourse}
+          data-dropdown-toogle="dropdown"
+          className="w-[10rem] rounded-md bg-red-600 py-4 text-white"
+        >
+          Week 0 :
+        </button>
+        <div className={` ${isOpen ? "size-0 opacity-0" : "lg:opacity-100"} `}>
+          {" "}
+          <iframe
+            src="/on tap lthnh 1.pdf"
+            allowFullScreen
+            className="bg-white"
+          ></iframe>
+        </div>
       </div>
     </div>
   );

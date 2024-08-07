@@ -91,7 +91,6 @@ export const Sidebar = () => {
         </motion.button>
       </div>
       <motion.aside
-        id="default-sidebar"
         initial={false}
         className={`fixed right-0 z-40 m-[1rem] h-[20rem] w-[200px] rounded-2xl backdrop-blur-xl lg:left-0 lg:m-0 lg:h-full ${
           isOpen ? "translate-x-[0rem]" : "translate-x-[20rem] lg:opacity-100"
