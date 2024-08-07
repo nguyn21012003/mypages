@@ -20,7 +20,6 @@ import { TMBLayout } from "./pages/course/TBM/TMB";
 import { MyFooter } from "./component/Footer";
 import { MyHeader } from "./component/header";
 
-export const metada = { title: "ngu" };
 export const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -31,6 +30,7 @@ export const App: React.FC = () => {
   return (
     <div className={`${darkMode && "dark"}`}>
       <MyHeader></MyHeader>
+      <title></title>
       <div className="static h-full w-full bg-[#f0e7db] dark:bg-[#101720]">
         <motion.button
           whileTap={{ scale: 0.9 }}
