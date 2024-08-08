@@ -1,5 +1,18 @@
 import React, { useState } from "react";
 
+import { motion, Variants } from "framer-motion";
+
+import { GoTriangleDown } from "react-icons/go";
+
+import { WeekPython } from "../../../lib/datPython";
+const itemVariants: Variants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 300, damping: 24 },
+  },
+  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+};
 export const PythonLayout: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpenCourse = () => {
@@ -28,21 +41,73 @@ export const PythonLayout: React.FC = () => {
           This 10-weeks of material will teach you Python through a mix between
           tutorials and interactive coding challenges.
         </h3>
-        <button
-          onClick={toggleOpenCourse}
-          data-dropdown-toogle="dropdown"
-          className="w-[10rem] rounded-md bg-red-600 py-4 text-white"
+        <motion.nav
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          className="flex flex-col items-center justify-center space-y-4 py-4"
         >
-          Week 0 :
-        </button>
-        <div className={` ${isOpen ? "size-0 opacity-0" : "lg:opacity-100"} `}>
-          {" "}
-          <iframe
-            src="/on tap lthnh 1.pdf"
-            allowFullScreen
-            className="bg-white"
-          ></iframe>
-        </div>
+          <motion.button
+            onClick={toggleOpenCourse}
+            whileTap={{ scale: 0.88 }}
+            animate={isOpen ? "open" : "closed"}
+            data-dropdown-toogle="dropdown"
+            className="flex w-[10rem] rounded-xl bg-red-600 p-4 text-white"
+          >
+            Menu{" "}
+            <motion.div
+              variants={{
+                open: { rotate: 180 },
+                closed: { rotate: 0 },
+              }}
+              transition={{ duration: 0.2 }}
+              style={{ originY: 0.55 }}
+              className="ml-20"
+            >
+              <GoTriangleDown className="inline-block" />
+            </motion.div>
+          </motion.button>
+          <motion.ul
+            className="space-y-4 bg-white p-4"
+            variants={{
+              open: {
+                clipPath: "inset(0% 0% 0% 0% round 10px)",
+                transition: {
+                  type: "spring",
+                  bounce: 0,
+                  duration: 0.7,
+                  delayChildren: 0.3,
+                  staggerChildren: 0.05,
+                },
+              },
+              closed: {
+                clipPath: "inset(10% 50% 90% 50% round 10px)",
+                transition: {
+                  type: "spring",
+                  bounce: 0,
+                  duration: 0.3,
+                },
+              },
+            }}
+            style={{ pointerEvents: isOpen ? "auto" : "none" }}
+          >
+            {WeekPython.map((item, index) => (
+              <motion.li
+                variants={itemVariants}
+                key={index}
+                id={item.name}
+                className=""
+              >
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`/Resources/${item.name}.pdf`}
+                >
+                  {item.name}: {item.description} <u>PDF</u>
+                </a>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.nav>
       </div>
     </div>
   );
