@@ -4,7 +4,7 @@ export const Homepage = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center">
       <div className="mx-10 w-[40rem] space-y-10 bg-transparent md:ml-20">
-        <h1 className="font-Poppins text-3xl font-medium text-[#0b1215] dark:text-[#E2E8F0]">
+        <h1 className="text-3xl font-medium text-[#0b1215] dark:text-[#E2E8F0]">
           Home
         </h1>{" "}
         <div>
