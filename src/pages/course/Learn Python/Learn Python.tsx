@@ -5,6 +5,7 @@ import { motion, Variants } from "framer-motion";
 import { GoTriangleDown } from "react-icons/go";
 
 import { WeekPython } from "../../../lib/datPython";
+
 const itemVariants: Variants = {
   open: {
     opacity: 1,
@@ -21,9 +22,12 @@ export const PythonLayout: React.FC = () => {
   return (
     <div className="flex h-full w-full bg-transparent">
       <div className="mx-4 mb-10 flex flex-col text-pretty lg:ml-[14rem]">
-        <h1 className="mt-[15rem] text-4xl font-semibold uppercase text-[#0b1215] dark:text-white">
+        <a
+          href="#"
+          className="sticky top-4 z-50 mt-[5rem] text-4xl font-semibold uppercase text-[#0b1215] dark:text-white"
+        >
           Learn Python
-        </h1>
+        </a>
         <h2 className="mt-[5rem] text-xl text-[#0b1215] dark:text-[#E2E8F0]">
           An introduction to programming using a language called Python. Learn
           how to read and write code as well as how to test and “debug” it.
