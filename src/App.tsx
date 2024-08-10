@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Route, Routes } from "react-router-dom";
 import { motion } from "framer-motion";
+import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi2";
 
 import { Homepage } from "./pages/Home";
 import { About } from "./pages/About";
@@ -11,8 +12,6 @@ import { Layout } from "./pages/topics/layout";
 import { PythonLayout } from "./pages/course/Learn Python/Learn Python";
 import { LayoutCourse } from "./pages/course/layout";
 import { Sidebar } from "./component/sidebar";
-
-import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi2";
 import { FormFeedback } from "./pages/feedback/form";
 import { ExtrasLayout } from "./pages/extras/layout";
 import { ArticleLayout } from "./pages/article/layout";
@@ -21,8 +20,19 @@ import { MyFooter } from "./component/Footer";
 import { MyHeader } from "./component/header";
 
 export const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const saveMode = localStorage.getItem("darkMode");
+    return saveMode === "true";
+  });
 
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("darkMode", darkMode.toString());
+  }, [darkMode]);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };

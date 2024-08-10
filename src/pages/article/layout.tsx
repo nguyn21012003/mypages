@@ -1,3 +1,3 @@
 export const ArticleLayout = () => {
-  return <div className="bg-red-50">Article layout</div>;
+  return <div className="bg-red-500">Article layout</div>;
 };

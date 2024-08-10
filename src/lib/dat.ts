@@ -119,7 +119,7 @@ export const NewestPost = [
     id: 2,
   },
   {
-    name: "Introduction to Programming with Python",
+    name: "Learn Python",
     description:
       "This 10-parts tutorial will teach you Python through a mix between tutorials and interactive coding challenges. ",
     time: "10",
