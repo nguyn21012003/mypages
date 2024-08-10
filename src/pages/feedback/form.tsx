@@ -27,7 +27,7 @@ export const FormFeedback: React.FC = () => {
       <div className="mx-4 mb-10 flex flex-col space-y-10 text-pretty lg:ml-[14rem]">
         <a
           href="#"
-          className="sticky top-3 z-50 mt-[5rem] text-4xl font-semibold uppercase text-[#0b1215] dark:text-white"
+          className="sticky top-3 z-50 mt-[5rem] w-fit text-3xl font-semibold uppercase text-[#0b1215] dark:text-white"
         >
           Feedback
         </a>
@@ -60,16 +60,17 @@ export const FormFeedback: React.FC = () => {
           </span>
         </p>
         <motion.div
-          className="group w-[12rem] rounded-2xl bg-[#18181b] p-2 dark:bg-white"
+          className="group flex w-[14rem] items-center justify-center rounded-2xl bg-[#18181b] p-2 dark:bg-white"
           whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 1.2 }}
         >
           <a
             href="https://github.com/nguyn21012003/mypages"
             className="font-semibold text-white dark:text-[#0b1215]"
           >
-            <FaGithub className="mb-1 inline-block text-white dark:text-[#0b1215]" />
+            <FaGithub className="mb-1 inline-block text-white dark:text-[#0b1215]" />{" "}
             Star on Github{" "}
-            <FaStar className="mb-1 ml-4 inline-block fill-[#6b7280] group-hover:fill-[#f9d72e]" />{" "}
+            <FaStar className="mb-1 ml-10 inline-block fill-[#6b7280] group-hover:fill-[#f9d72e]" />{" "}
             {stargazersCount !== null ? stargazersCount : "Loading..."}
           </a>
         </motion.div>

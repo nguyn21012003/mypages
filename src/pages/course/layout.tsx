@@ -23,10 +23,13 @@ export const LayoutCourse: React.FC = () => {
 
   return (
     <div className="flex h-full w-full bg-transparent">
-      <div className="mx-4 lg:ml-[14rem]">
-        <h1 className="mt-[15rem] text-4xl font-semibold uppercase text-[#0b1215] dark:text-white">
+      <div className="mx-4 mt-[5rem] lg:ml-[14rem]">
+        <a
+          href="#"
+          className="sticky top-3 z-50 w-fit text-3xl font-semibold uppercase text-[#0b1215] dark:text-white"
+        >
           Course
-        </h1>
+        </a>
         <h2 className="mt-[5rem] text-xl text-[#0b1215] dark:text-[#E2E8F0]">
           Improve your web development skills in a variety of languages and
           frameworks, including HTML, CSS, JavaScript, React, TypeScript, and
