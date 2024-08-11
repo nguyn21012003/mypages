@@ -1,9 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { FiGithub, FiFacebook } from "react-icons/fi";
-import { AiOutlineGlobal } from "react-icons/ai";
-import { CiLinkedin } from "react-icons/ci";
+import { AiOutlineGlobal, AiOutlineLinkedin } from "react-icons/ai";
 
 import Skills from "../component/skill";
 import { RecentlyPost } from "../component/recently";
@@ -17,7 +17,7 @@ export const About: React.FC = () => {
           <div>
             <div className="mt-14 bg-transparent md:max-w-[50rem]">
               <div className="md:flex">
-                <div className="p-8 md:shrink-0">
+                <div className="space-y-1 p-8 md:shrink-0">
                   <img
                     alt="Khoi Nguyen Tran"
                     className="size-20 self-start rounded-full border-[4px]"
@@ -42,59 +42,76 @@ export const About: React.FC = () => {
                       CONTACT ME AT
                     </a>
                   </p>
-                  <div className="flex space-x-2">
+                  <p>
                     <a
+                      className="text-lg font-semibold text-[#0b1215] dark:text-white"
+                      href="mailto:knnnguyen21012003@gmail.com"
+                    >
+                      knnnguyen21012003@gmail.com
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      className="text-lg font-semibold text-[#0b1215] dark:text-white"
+                      href="mailto:knnnguyen21012003@gmail.com"
+                    >
+                      21130069@student.hcmus.edu.vn
+                    </a>
+                  </p>
+                  <motion.div className="flex space-x-2">
+                    <motion.a
                       href="https://jeremy-tran.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className=""
                     >
-                      <div className="hover:scale-110">
+                      <motion.div whileHover={{ scale: 1.4 }}>
                         <AiOutlineGlobal className="text-[#0b1215] dark:text-white" />
-                      </div>
-                    </a>
-                    <a
+                      </motion.div>
+                    </motion.a>
+                    <motion.a
                       href="https://github.com/nguyn21012003"
                       target="_blank"
                       rel="noopener noreferrer"
                       title="github"
                       data-popover-target="pop"
                     >
-                      <div className="hover:scale-110">
+                      <motion.div whileHover={{ scale: 1.4 }}>
                         <FiGithub className="text-[#0b1215] dark:text-white" />
-                      </div>
-                    </a>
-                    <a
+                      </motion.div>
+                    </motion.a>
+                    <motion.a
                       href="https://www.facebook.com/nguyn.kool/"
                       target="_blank"
                       rel="noopener noreferrer"
                       title="facebook"
                     >
-                      <div className="hover:scale-110">
+                      <motion.div whileHover={{ scale: 1.4 }}>
                         <FiFacebook className="text-[#0b1215] dark:text-white" />
-                      </div>
-                    </a>
-                    <a
+                      </motion.div>
+                    </motion.a>
+                    <motion.a
                       href="https://www.linkedin.com/in/nguyenkool/"
                       target="_blank"
                       rel="noopener noreferrer"
                       title="Likedin"
                     >
-                      <div className="hover:scale-110">
-                        <CiLinkedin className="text-[#0b1215] dark:text-white" />
-                      </div>
-                    </a>
-                  </div>
+                      <motion.div whileHover={{ scale: 1.4 }}>
+                        <AiOutlineLinkedin className="text-[#0b1215] dark:text-white" />
+                      </motion.div>
+                    </motion.a>
+                  </motion.div>
                   <div className="flex h-6 w-6 items-center justify-center"></div>
-                  <a
+                  <motion.a
                     href="/document.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="border-1 group flex animate-pulse items-center justify-center rounded-full bg-sky-800 p-2 text-base font-normal text-[white] shadow-2xl hover:scale-110 hover:brightness-125 dark:bg-slate-500 dark:hover:brightness-125"
+                    whileHover={{ scale: 1.1 }}
+                    className="border-1 group flex animate-pulse items-center justify-center rounded-full bg-sky-800 p-2 text-base font-normal text-[white] shadow-2xl hover:brightness-125 dark:bg-slate-500 dark:hover:brightness-125"
                   >
                     <span className="text-center">Check out my CV</span>{" "}
                     <HiOutlineDocumentDownload className="ml-1" />
-                  </a>
+                  </motion.a>
                 </div>
                 <div className="space-y-14 p-8">
                   <div className="space-y-5">
@@ -113,7 +130,7 @@ export const About: React.FC = () => {
                         Tran Khoi Nguyen aka Khoi Nguyen Tran aka Jeremy is a
                         senior physics student with a passion not only for
                         learning Theoretical Physics but also building digital
-                        services/stuff he wants. When not on time 
+                        services/stuff he wants. When not on time
                       </a>
                     </p>
                   </div>

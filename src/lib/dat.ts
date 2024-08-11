@@ -4,7 +4,7 @@ export const skillDat = [
   "Latex",
   "Python",
   "React",
-  "Example",
+  "Framer Motion",
   "Example",
   "Example",
   "Example",

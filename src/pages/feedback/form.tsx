@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
 import { FaGithub, FaStar } from "react-icons/fa";
 
-import { motion } from "framer-motion";
-
 export const FormFeedback: React.FC = () => {
+  const count = useMotionValue(0);
+
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
   const [stargazersCount, setStargazersCount] = useState<number | null>(null);
+
   useEffect(() => {
     const fetchStargazersCount = async () => {
       try {
@@ -22,6 +26,14 @@ export const FormFeedback: React.FC = () => {
 
     fetchStargazersCount();
   }, []);
+
+  useEffect(() => {
+    if (stargazersCount !== null) {
+      const animation = animate(count, stargazersCount, { duration: 2 });
+
+      return animation.stop;
+    }
+  }, [stargazersCount, count]);
   return (
     <div className="flex h-full w-full bg-transparent lg:h-screen">
       <div className="mx-4 mb-10 flex flex-col space-y-10 text-pretty lg:ml-[14rem]">
@@ -66,12 +78,13 @@ export const FormFeedback: React.FC = () => {
         >
           <a
             href="https://github.com/nguyn21012003/mypages"
-            className="font-semibold text-white dark:text-[#0b1215]"
+            className="flex items-center justify-center font-semibold text-white dark:text-[#0b1215]"
           >
-            <FaGithub className="mb-1 inline-block text-white dark:text-[#0b1215]" />{" "}
+            <FaGithub className="mr-1 inline-block text-white dark:text-[#0b1215]" />
             Star on Github{" "}
-            <FaStar className="mb-1 ml-10 inline-block fill-[#6b7280] group-hover:fill-[#f9d72e]" />{" "}
-            {stargazersCount !== null ? stargazersCount : "Loading..."}
+            <FaStar className="ml-10 mr-1 inline-block fill-[#6b7280] group-hover:fill-[#f9d72e]" />
+            {"  "}
+            <motion.h1>{rounded}</motion.h1>
           </a>
         </motion.div>
       </div>
