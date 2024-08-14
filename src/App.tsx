@@ -83,7 +83,7 @@ export const App: React.FC = () => {
             element={<FormFeedback></FormFeedback>}
           />
         </Routes>
-        <div className="hidden">
+        <div className="">
           <MyFooter></MyFooter>
         </div>
       </div>
