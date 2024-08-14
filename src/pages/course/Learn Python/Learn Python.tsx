@@ -24,9 +24,9 @@ export const PythonLayout: React.FC = () => {
       <div className="mx-4 mb-10 flex flex-col text-pretty lg:ml-[14rem]">
         <a
           href="#"
-          className="sticky top-4 z-50 mt-[5rem] text-4xl font-semibold uppercase text-[#0b1215] dark:text-white"
+          className="sticky top-4 z-30 mt-[5rem] w-fit text-4xl font-semibold uppercase text-[#0b1215] dark:text-white"
         >
-          Learn Python
+          Python
         </a>
         <h2 className="mt-[5rem] text-xl text-[#0b1215] dark:text-[#E2E8F0]">
           An introduction to programming using a language called Python. Learn

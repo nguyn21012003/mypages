@@ -4,18 +4,30 @@ export default function MyExperience() {
       <h1 className="text-center text-3xl font-semibold text-[#0b1215] dark:text-white">
         Experience
       </h1>
-      <div className="w-[24rem] rounded-md border border-blue-300 p-4 shadow">
-        <div className="flex animate-pulse space-x-4">
-          <div className="h-10 w-10 rounded-full bg-slate-700"></div>
-          <div className="flex-1 space-y-6 py-1">
-            <div className="h-2 rounded bg-slate-700"></div>
-            <div className="space-y-3">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-2 h-2 rounded bg-slate-700"></div>
-                <div className="col-span-1 h-2 rounded bg-slate-700"></div>
-              </div>
-              <div className="h-2 rounded bg-slate-700"></div>
-            </div>
+      <div className="flex">
+        <div className="">2024</div>
+        <div className="w-[20rem] py-4">
+          <div className="space-x-4 md:flex">
+            <a
+              href="https://cs50.harvard.edu/certificates/89ca7f0b-bf64-4934-9e9b-7550d48de8e2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="w-[20rem] md:w-full"
+                src="/experience/CS50P.png"
+              ></img>
+            </a>
+            <a
+              href="https://cs50.harvard.edu/certificates/89ca7f0b-bf64-4934-9e9b-7550d48de8e2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="w-[20rem] md:w-full"
+                src="/experience/CS50P.png"
+              ></img>
+            </a>
           </div>
         </div>
       </div>

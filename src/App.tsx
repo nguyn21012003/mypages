@@ -12,7 +12,7 @@ import { Layout } from "./pages/topics/layout";
 import { PythonLayout } from "./pages/course/Learn Python/Learn Python";
 import { LayoutCourse } from "./pages/course/layout";
 import { Sidebar } from "./component/sidebar";
-import { FormFeedback } from "./pages/feedback/form";
+import { FormFeedback } from "./pages/feedback/layout";
 import { ExtrasLayout } from "./pages/extras/layout";
 import { ArticleLayout } from "./pages/article/layout";
 import { TMBLayout } from "./pages/course/TBM/TMB";
