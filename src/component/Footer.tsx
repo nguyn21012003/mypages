@@ -2,9 +2,9 @@ import React from "react";
 
 import { PiCopyright } from "react-icons/pi";
 
-import { FiGithub, FiFacebook } from "react-icons/fi";
+/*import { FiGithub, FiFacebook } from "react-icons/fi";
 import { AiOutlineGlobal } from "react-icons/ai";
-import { CiLinkedin } from "react-icons/ci";
+import { CiLinkedin } from "react-icons/ci";*/
 import { Link } from "react-router-dom";
 
 export const MyFooter: React.FC = () => {
